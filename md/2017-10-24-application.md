@@ -20,7 +20,7 @@ $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);  // 解析核心
 // 解析响应
 $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
-);
+);  
 
 // 响应
 $response->send();
