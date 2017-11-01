@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Requests\Request;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -69,4 +70,10 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    public function index(Request $request) {
+    	dump($this->getGuard());
+    	dump($this->guestMiddleware());
+    	dump($this->getThrottleKey($request));
+	}
 }
