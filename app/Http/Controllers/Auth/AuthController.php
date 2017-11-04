@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Requests\Request;
 use App\User;
+use Illuminate\Http\Request;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -30,6 +30,15 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = '/';
+
+	/**
+	 * Where to redirect users after logout.
+	 *
+	 * @var string
+	 */
+	protected $redirectAfterLogout = '/login';
+
+	protected $guard = 'web';
 
     /**
      * Create a new authentication controller instance.
